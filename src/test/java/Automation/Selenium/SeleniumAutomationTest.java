@@ -20,10 +20,8 @@ WebDriver driver;
 	
 	@Before
 	public void setup() {
-		String projectDir = System.getProperty("user.dir");
-		
-		System.setProperty("webdriver.gecko.driver", projectDir+"\\drivers\\geckodriver.exe");
-	    driver = new FirefoxDriver();
+		System.setProperty("webdriver.gecko.driver","/Users/arun/Downloads/geckodriver");
+		driver = new FirefoxDriver();
 	    driver.navigate().to("http://www.wikipedia.org/");
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
@@ -54,8 +52,7 @@ WebDriver driver;
 		
 		List<String> languages = new ArrayList<String>();
 	
-		 for (WebElement e  : langList)
-	        {
+		 for (WebElement e  : langList) {
 			 languages.add(e.getText());
 	        }
 		 
@@ -74,7 +71,5 @@ WebDriver driver;
 	public void teardown() {
 		driver.quit();
 	}
-	
-	
 
 }
